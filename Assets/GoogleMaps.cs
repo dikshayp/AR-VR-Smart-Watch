@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GoogleMaps : MonoBehaviour {
 
+	string subject = "WORD-O-MAZE";
+	string body = "PLAY THIS AWESOME. GET IT ON THE PLAYSTORE";
 	string key = "AIzaSyC57-8x2IyIGaWHJcqq6xnUAjMh4wIffKU"; //put your own API key here.
 	string url = "";
 	/// <summary>
@@ -14,15 +16,15 @@ public class GoogleMaps : MonoBehaviour {
 	LocationInfo li;
 	/// <summary>
 	/// Maps on Google Maps have an integer 'zoom level' which defines the resolution of the current view.
-	/// Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) and 
-	/// 21+ (down to streets and individual buildings) are possible within the default roadmap view. 
+	/// Zoom levels between 0 (the lowest zoom level, in which the entire world can be seen on one map) and
+	/// 21+ (down to streets and individual buildings) are possible within the default roadmap view.
 	/// </summary>
 	public int zoom = 14;
 	bool loadingMap;
 	/// <summary>
-	/// not more then 640 * 640 
+	/// not more then 640 * 640
 	/// </summary>
-	/// 
+	///
 	public int mapWidth = 640;
 	public int mapHeigh = 640;
 
@@ -34,20 +36,20 @@ public class GoogleMaps : MonoBehaviour {
 	public int scale;
 	IEnumerator GetGoogleMap()
 	{
-		
+
 		Debug.Log("starting google maps");
 
 			GameObject gameObject = GameObject.Find ("Cube1");
 			/*url = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon +
-				"&zoom=" + zoom + "&size=" + mapWidth + "x" + mapHeigh + "&scale=" + scale 
+				"&zoom=" + zoom + "&size=" + mapWidth + "x" + mapHeigh + "&scale=" + scale
 				+"&maptype=" + mapSelected +
 				"&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=" + key;
 			*/
-			url = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=600x300&maptype=roadmap" 
-					+ "&markers=color:blue%7Clabel:%7C" + lat + "," + lon 
+			url = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=13&size=600x300&maptype=roadmap"
+					+ "&markers=color:blue%7Clabel:%7C" + lat + "," + lon
 					+ "&key=" + key;
 			loadingMap = true;
-			WWW www = new WWW(url); 
+			WWW www = new WWW(url);
 			yield return www;
 			loadingMap = false;
 			//Assign downloaded map texture to any gameobject e.g., plane
@@ -56,19 +58,34 @@ public class GoogleMaps : MonoBehaviour {
 			} else {
 				Debug.Log ("game object null");
 			}
-		
+
 	}
-	
+
+
+ /*public int callShareApp(){
+  AndroidJavaClass unity = new AndroidJavaClass ("com.unity3d.player.UnityPlayer");
+  //AndroidJavaObject currentActivity = unity.GetStatic<AndroidJavaObject> ("currentActivity");
+  //AndroidJavaObject currentActivity = new AndroidJavaObject("com.dikshay.arwatch.MainActivity");
+  AndroidJavaClass jc = new AndroidJavaClass("com.dikshay.arwatch.MainActivity");
+  int ret = jc.CallStatic<int>("shareText");
+  return ret;
+ }*/
 	// Use this for initialization
 	void Start () {
+/*
+	if(ret == 0)
+	{
+		StartCoroutine(setLocation());
+		StartCoroutine(GetGoogleMap());
+	}*/
 	StartCoroutine(setLocation());
 	StartCoroutine(GetGoogleMap());
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		//StartCoroutine(GetGoogleMap());
-			StartCoroutine(setLocation());
+	StartCoroutine(setLocation());
 	StartCoroutine(GetGoogleMap());
 	}
 	IEnumerator setLocation()
@@ -105,13 +122,13 @@ public class GoogleMaps : MonoBehaviour {
             Debug.Log("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
 			lat = Input.location.lastData.latitude;
 			lon = Input.location.lastData.longitude;
-	
+
 
 		}
 		// Stop service if there is no need to query location updates continuously
         //Input.location.Stop();
-		
+
 
 	}
-	
+
 }
