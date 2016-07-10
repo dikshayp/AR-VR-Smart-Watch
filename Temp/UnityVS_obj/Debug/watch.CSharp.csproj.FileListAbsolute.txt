@@ -1,0 +1,15 @@
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEngine.Networking.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\Vuforia.UnityExtensions.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEngine.Networking.xml
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_bin\Debug\Vuforia.UnityExtensions.xml
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_obj\Debug\watch.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_obj\Debug\Assembly-CSharp.dll
+C:\Users\Dikshay\Documents\watch\Temp\UnityVS_obj\Debug\Assembly-CSharp.pdb
